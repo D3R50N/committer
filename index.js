@@ -100,6 +100,7 @@ async function commit({ message, shouldPush, files }) {
 
 
 
+    console.log(shouldPush);
     let action = shouldPush ? { push: true } : await inquirer.prompt([{
         name: "push",
         message: "Push to default branch ?",
