@@ -108,7 +108,7 @@ async function commit({ message, shouldPush, files }) {
     }]);
 
     if (action.push) {
-        execCommand(`git push`);
+        execCommand(`git push`); 
     }
 
 
