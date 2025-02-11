@@ -75,7 +75,8 @@ async function commit() {
 
     for (let key in command) {
         console.log(`Running command \`${command[key]}\``);
-        execSync(command[key])
+        const ret = execSync(command[key])
+        console.log(ret.toString("utf-8"));
    }
 
 }
