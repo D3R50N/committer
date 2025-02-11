@@ -68,8 +68,15 @@ async function commit() {
     const message = `${out.type}${out.scope}${out.desc}`;
 
     const { execSync } = require('child_process');
-    execSync(`git add ${result.files}`);
-    execSync(`git commit -m "${message}"`);
+    const command = {
+        add: `git add ${result.files}`,
+        commit: `git commit -m "${message}"`
+    }
+
+    for (let key in command) {
+        console.log(`Running command \`${command[key]}\``);
+        execSync(command[key])
+   }
 
 }
 
